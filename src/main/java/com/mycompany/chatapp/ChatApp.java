@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Main entry point for the QuickChat application.
- * Handles the console-based registration and login flow.
+ * Handles the registration and login flow.
  */
 
 public class ChatApp {
@@ -29,5 +29,17 @@ public class ChatApp {
  
         System.out.print("Enter cell phone number (SA numbers only, e.g. +27831234567): ");
         String cellNumber = scanner.nextLine();
+        
+         // Attempt registration
+        Login user = new Login(username, password, cellNumber, firstName, lastName);
+        String registrationResult = user.registerUser();
+        System.out.println("\n" + registrationResult);
+        
+        // Stop if registration failed
+        if (!registrationResult.equals("User registered successfully.")) {
+            System.out.println("Registration failed. Please restart and try again.");
+            scanner.close();
+            return;
+        }
     }
 }
