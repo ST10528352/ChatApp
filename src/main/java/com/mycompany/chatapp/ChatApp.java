@@ -12,7 +12,7 @@ public class ChatApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("=== QuickChat ===");
-        System.out.println("Please register to continue./n");
+        System.out.println("Please register to continue.");
         
         //Collect user details
         System.out.println("Enter first name: ");
@@ -53,6 +53,6 @@ public class ChatApp {
         String loginStatus = user.returnLoginStatus(loginUsername, loginPassword);
         System.out.println("\n" + loginStatus);
         
-      
+      scanner.close();
     }
 }
