@@ -33,5 +33,41 @@ public class Login {
         }
         return false;
     }
+     // Checks password is at least 8 chars, has a capital, number and special character
+    public boolean checkPasswordComplexity() {
+        if (password.length() < 8) {
+            return false;
+        }
+ 
+        boolean hasCapital = false;
+        boolean hasNumber = false;
+        boolean hasSpecial = false;
+ 
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+ 
+            if (Character.isUpperCase(c)) {
+                hasCapital = true;
+            } else if (Character.isDigit(c)) {
+                hasNumber = true;
+            } else if (!Character.isLetter(c) && !Character.isDigit(c)) {
+                hasSpecial = true;
+            }
+        }
+ 
+        if (hasCapital && hasNumber && hasSpecial) {
+            return true;
+        }
+        return false;
+    }
+     // Checks cell number starts with +27 and is 12 characters total
+    // +27 = 3 chars, then 9 digits = 12 total e.g. +27838968976
+    // Reference: Regexr.com (2023). Phone number patterns. Retrieved from https://www.regexr.com/
+    public boolean checkCellPhoneNumber() {
+        if (cellPhoneNumber.startsWith("+27") && cellPhoneNumber.length() == 12) {
+            return true;
+        }
+        return false;
+    }
 }
     
