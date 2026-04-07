@@ -41,5 +41,18 @@ public class ChatApp {
             scanner.close();
             return;
         }
+        
+        //Login
+        System.out.println("\n--- Login ---");
+        System.out.println("Enter username: ");
+        String loginUsername = scanner.nextLine();
+        
+        System.out.println("Enter password: ");
+        String loginPassword = scanner.nextLine();
+        
+        String loginStatus = user.returnLoginStatus(loginUsername, loginPassword);
+        System.out.println("\n" + loginStatus);
+        
+      
     }
 }
