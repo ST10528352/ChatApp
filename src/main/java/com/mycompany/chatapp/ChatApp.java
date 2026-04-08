@@ -5,6 +5,8 @@ import java.util.Scanner;
 /**
  * Main entry point for the QuickChat application.
  * Handles the registration and login flow.
+ * 
+ * showing friend how to push stuff
  */
 
 public class ChatApp {
